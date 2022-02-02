@@ -1,0 +1,33 @@
+<h1>Blog MU New</h1>
+
+<%= form_with scope: :article, url: article_create_path, local: true do |f| %>
+
+<p>
+   <% if @article.errors.any? %>
+      
+         <% @article.errors.full_messages.each do |message| %>
+            <p> <%= message %> </p>
+         <% end %>
+      
+   <% end %>
+</p>
+
+<p>
+   <%= f.label :name %>
+   <br/>
+   <%= f.text_field :name %>
+</p>
+
+<p>
+<%= f.label :body %>
+<br/>
+<%= f.text_field :body %>
+</p>
+
+<p>
+<%= f.submit %>
+</p>
+
+<% end %>
+
+<%= link_to 'Back to Index', article_index_path %>

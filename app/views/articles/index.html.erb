@@ -1,0 +1,28 @@
+<h1>Blog MU Index</h1>
+
+<table>
+
+   <thead>
+      <tr>
+         <th>ID</th>
+         <th>Name</th>
+         <th>Body</th>
+         <th>Edit</th>
+      </tr>
+   </thead>
+
+   <tbody>
+      <% @articles.each do |article| %>
+      <tr>
+         <td><%= article.id %></td>
+         <td><%= article.name %></td>
+         <td><%= article.body %></td>
+         <td> <%= link_to 'Edit', article_edit_path(article.id) %> </td>
+         
+      </tr>
+      <% end %>
+   </tbody>
+
+</table>
+
+<%= link_to 'New Article', article_new_path %>
